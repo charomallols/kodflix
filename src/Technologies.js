@@ -1,25 +1,22 @@
 import React from 'react';
-import Stack from './Stack.js';
-import react from './images/react-icon.svg';
-import html5 from './images/html5-icon.svg';
-import css3 from './images/css3-icon.svg';
-import node from './images/node-icon.svg';
-import mongo from './images/database-icon.svg';
-import heroku from './images/heroku-icon.svg';
+import Stack from './Stack';
+import getTechnologies from './Technologies-get';
 
 export default function Technologies() {
     return (
       <div>
         <div className='container'>
-          <Stack name='React' logo={react} />
-          <Stack name='html5' logo={html5} />
-          <Stack name='CSS3' logo={css3} />
-        </div>
-        <div className='container'>
-          <Stack name='Node' logo={node} />
-          <Stack name='Mongo' logo={mongo} />
-          <Stack name='Heroku' logo={heroku} />
+          {
+            getTechnologies().map(stack => (
+              <Stack
+               key={Stack.id}
+               id={stack.id}
+               name={stack.name}
+               logo={stack.logo} />
+            ))
+          }
         </div>
       </div>
-    )
+    );  
 }
+
