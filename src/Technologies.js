@@ -1,6 +1,6 @@
 import React from 'react';
 import Stack from './Stack';
-import getTechnologies from './Technologies-get';
+import getTechnologies from './Details/Technologies-get';
 
 export default function Technologies() {
     return (
